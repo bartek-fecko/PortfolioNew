@@ -1,0 +1,33 @@
+$decoration-rect-size: 14px
+$decoration-rect-rotate: rotate(45deg)
+$decoration-rect-color:#6C63FF
+
+.decoration
+   position: relative
+
+   span:first-of-type
+      top: 40%
+      left: 20px
+
+   span:nth-of-type(2)
+      top: 10%
+      left: 30px
+      transform: rotate(180deg)
+
+   &__rect
+      width: $decoration-rect-size
+      height: $decoration-rect-size
+      background: white
+      border: 1px solid $decoration-rect-color
+      transform: $decoration-rect-rotate
+      position: absolute
+
+      &::after
+         content: ''
+         width: $decoration-rect-size
+         height: $decoration-rect-size
+         position: absolute
+         background: $decoration-rect-color
+         right: 4px
+         top: 2px
+

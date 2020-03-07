@@ -1,0 +1,52 @@
+.presentation
+    display: grid
+    grid-template-columns: 2fr 1fr
+    grid-template-rows: 3fr 2fr 1fr
+    grid-template-areas: 'header decoration' 'desc desc' 'actions actions'
+
+    &__socials 
+        grid-area: socials
+        align-self: center
+        img 
+            width: 22px
+            height: 22px
+
+    &__btn 
+        border-radius: 4px
+        width: 130px
+        height: 34px
+        text-align: center
+        outline: none
+        cursor: pointer
+        
+        &--primary
+            background: $primaryBlue
+            color: white
+            border: none
+
+        &--secendary 
+            background: white
+            border: 1px solid $primaryBlue
+            color: $primaryBlue
+
+    &__author
+        grid-area: author
+        align-self: center
+        text-align: right
+
+    &__header
+        grid-area: header
+            
+    &__desc
+        grid-area: desc
+        color: #685E5E
+                
+    &__big-img
+        display: none
+
+    &__actions
+        grid-area: actions
+        text-align: center
+
+    &__decoration      
+        grid-area: decoration         

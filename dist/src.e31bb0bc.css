@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap");
+body {
+  max-width: 2000px;
+  margin: 0 auto;
+  font-family: Montserrat, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container {
+  width: 100%;
+  padding: 0 16px;
+}
+
+@media only screen and (min-width: 490px) {
+  .container {
+    padding: 0 80px;
+  }
+}
+.navigation {
+  width: 100%;
+}
+.navigation .container {
+  display: flex;
+  justify-content: space-between;
+}
+.navigation__links {
+  list-style-type: none;
+  padding: 0;
+  display: none;
+}
+.navigation__author {
+  align-self: center;
+  color: #3E35D1;
+}
+
+.presentation {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 3fr 2fr 1fr;
+  grid-template-areas: "header decoration" "desc desc" "actions actions";
+}
+.presentation__socials {
+  grid-area: socials;
+  align-self: center;
+}
+.presentation__socials img {
+  width: 22px;
+  height: 22px;
+}
+.presentation__btn {
+  border-radius: 4px;
+  width: 130px;
+  height: 34px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+}
+.presentation__btn--primary {
+  background: #3E35D1;
+  color: white;
+  border: none;
+}
+.presentation__btn--secendary {
+  background: white;
+  border: 1px solid #3E35D1;
+  color: #3E35D1;
+}
+.presentation__author {
+  grid-area: author;
+  align-self: center;
+  text-align: right;
+}
+.presentation__header {
+  grid-area: header;
+}
+.presentation__desc {
+  grid-area: desc;
+  color: #685E5E;
+}
+.presentation__big-img {
+  display: none;
+}
+.presentation__actions {
+  grid-area: actions;
+  text-align: center;
+}
+.presentation__decoration {
+  grid-area: decoration;
+}
+
+.decoration {
+  position: relative;
+}
+.decoration span:first-of-type {
+  top: 40%;
+  left: 20px;
+}
+.decoration span:nth-of-type(2) {
+  top: 10%;
+  left: 30px;
+  transform: rotate(180deg);
+}
+.decoration__rect {
+  width: 14px;
+  height: 14px;
+  background: white;
+  border: 1px solid #6C63FF;
+  transform: rotate(45deg);
+  position: absolute;
+}
+.decoration__rect::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  background: #6C63FF;
+  right: 4px;
+  top: 2px;
+}
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap')
+
+body 
+   max-width: 2000px
+   margin: 0 auto
+   font-family: Montserrat, sans-serif
+
+*
+   box-sizing: border-box
+   color: rgba(0, 0, 0, 0.87)
+   -webkit-font-smoothing: antialiased
+   -moz-osx-font-smoothing: grayscale
+   text-rendering: optimizeLegibility
+   -webkit-text-size-adjust: 100%
+
+@import ./shared
+
+.container  
+   width: 100%
+   padding: 0 spacing(2)
+   
+
+@include useMinWidth(490px)
+   .container
+      padding: 0 spacing(10)
+
+@import ./navbar
+@import ./presentation
+@import ./decoration
+

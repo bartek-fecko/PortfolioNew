@@ -1,0 +1,8 @@
+@function spacing($space)
+   @return $space * 8px
+
+@mixin useMinWidth($minWidth)
+   @media only screen and (min-width: $minWidth)
+      @content
+      
+$primaryBlue: #3E35D1
