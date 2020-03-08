@@ -3,7 +3,7 @@
     grid-template-columns: 2fr 1fr
     grid-template-rows: 3fr 2fr 1fr
     grid-template-areas: 'header decoration' 'desc desc' 'actions actions'
-    margin-bottom: 10rem
+    margin-bottom: 5rem
 
     &__btn 
         border-radius: 4px
@@ -43,7 +43,11 @@
 
     &__actions
         grid-area: actions
-        text-align: center  
+        text-align: center
+        display: flex
+
+        button:nth-of-type(2)
+            margin-left: spacing(1) 
     
     @include useMinWidth(750px)
         grid-template-columns: 2fr 1fr 
@@ -65,7 +69,7 @@
 
     @include useMinWidth(850px)
         grid-template-columns: 100px 2fr .5fr 2fr
-        grid-template-rows: 1fr 2fr 1fr 1.5fr
+        grid-template-rows: 1.5fr 2fr 1fr 1.5fr
         grid-template-areas: 'decoration author . .' 'decoration header . big-img' 'decoration desc . big-img' 'decoration actions . .'
 
         &__header
