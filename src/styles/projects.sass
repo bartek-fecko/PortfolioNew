@@ -1,0 +1,23 @@
+.projects
+   background: $backgroundGray
+   padding-top: 8rem
+
+   &__desc
+      text-align: center
+
+   &__header
+      display: inline
+      position: relative
+
+      &::after
+         content: ''
+         background: $primaryBlue
+         height: 2px
+         display: block
+         position: absolute
+         width: 70%
+         left: 50%
+         transform: translate(-50%, 28px)
+
+   &__body
+      margin-top: 44px + 28px

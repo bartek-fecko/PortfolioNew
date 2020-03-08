@@ -24,6 +24,11 @@ body {
     padding: 0 80px;
   }
 }
+@media only screen and (min-width: 630px) {
+  .section-header {
+    font-size: 2rem;
+  }
+}
 @media only screen and (min-width: 1150px) {
   .container {
     padding: 0 128px;
@@ -31,8 +36,7 @@ body {
 }
 .navigation {
   width: 100%;
-  position: sticky;
-  top: 0;
+  z-index: 100;
 }
 .navigation .container {
   display: flex;
@@ -74,6 +78,12 @@ body {
   height: 28px;
 }
 @media only screen and (min-width: 750px) {
+  .navigation {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #eee;
+    background: rgba(255, 255, 255, 0.9);
+  }
   .navigation__links {
     display: flex;
   }
@@ -87,6 +97,7 @@ body {
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 3fr 2fr 1fr;
   grid-template-areas: "header decoration" "desc desc" "actions actions";
+  margin-bottom: 10rem;
 }
 .presentation__btn {
   border-radius: 4px;
@@ -205,20 +216,54 @@ body {
 
 .carlousel {
   width: 100%;
-  background: #5c5c58;
-  height: 200px;
+  background: transparent;
   margin-bottom: 100px;
   display: flex;
   overflow: scroll;
-  cursor: pointer;
+  cursor: grab;
   user-select: none;
   overflow-y: hidden;
 }
 .carlousel__box {
   min-width: 400px;
-  height: 80%;
   background: orange;
   margin: 20px;
+  position: relative;
+  height: 300px;
+}
+.carlousel__box * {
+  color: white;
+}
+.carlousel__box__overlay {
+  background: rgba(97, 74, 237, 0.65);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.projects {
+  background: #F8F8F8;
+  padding-top: 8rem;
+}
+.projects__desc {
+  text-align: center;
+}
+.projects__header {
+  display: inline;
+  position: relative;
+}
+.projects__header::after {
+  content: "";
+  background: #3E35D1;
+  height: 2px;
+  display: block;
+  position: absolute;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%, 28px);
+}
+.projects__body {
+  margin-top: 72px;
 }
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

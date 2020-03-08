@@ -195,20 +195,19 @@ window.addEventListener('load', function () {
     var carouselWrp = document.getElementsByClassName('carlousel')[0];
     var isDown = false;
     var mouseDownStartPoint = 0;
-    var scrollLeft = 0;
     return function () {
       carouselWrp.addEventListener('mousedown', function (e) {
         isDown = true;
-        mouseDownStartPoint = e.pageX - carouselWrp.offsetLeft;
-        scrollLeft = carouselWrp.scrollLeft;
+        mouseDownStartPoint = e.pageX;
       });
       document.addEventListener('mouseup', function () {
         isDown = false;
       });
       carouselWrp.addEventListener('mousemove', function (e) {
         if (isDown) {
-          var delta = e.pageX - carouselWrp.offsetLeft - mouseDownStartPoint;
-          carouselWrp.scrollLeft = scrollLeft - delta;
+          var delta = e.pageX - mouseDownStartPoint;
+          mouseDownStartPoint = e.pageX;
+          carouselWrp.scrollLeft -= delta;
         }
       });
     };
@@ -250,7 +249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50260" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50007" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -4,13 +4,11 @@ window.addEventListener('load', () => {
 
       let isDown: boolean = false;
       let mouseDownStartPoint: number = 0;
-      let scrollLeft: number = 0;
 
       return () => {
          carouselWrp.addEventListener('mousedown', (e: MouseEvent) => {
             isDown = true;
-            mouseDownStartPoint = e.pageX - carouselWrp.offsetLeft;
-            scrollLeft = carouselWrp.scrollLeft;
+            mouseDownStartPoint = e.pageX;
          });
 
          document.addEventListener('mouseup', () => {
@@ -19,8 +17,9 @@ window.addEventListener('load', () => {
 
          carouselWrp.addEventListener('mousemove', (e: MouseEvent) => {
             if (isDown) {
-               const delta = e.pageX - carouselWrp.offsetLeft - mouseDownStartPoint;
-               carouselWrp.scrollLeft = scrollLeft - delta;
+               const delta = e.pageX - mouseDownStartPoint;
+               mouseDownStartPoint = e.pageX;
+               carouselWrp.scrollLeft -= delta;
             }
          });
       };

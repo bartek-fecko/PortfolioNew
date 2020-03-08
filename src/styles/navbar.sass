@@ -1,10 +1,7 @@
 .navigation
     width: 100%
-    position: sticky
-    top: 0
-    // border-bottom: 1px solid #eee
-    // background: rgba(255, 255, 255, .9)
-
+    z-index: 100
+    
     .container 
         display: flex
         justify-content: space-between
@@ -45,6 +42,11 @@
             height: 28px
             
     @include useMinWidth(750px)
+        position: sticky
+        top: 0
+        border-bottom: 1px solid #eee
+        background: rgba(255, 255, 255, .9)
+
         &__links
             display: flex
         
