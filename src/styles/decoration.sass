@@ -3,6 +3,7 @@ $decoration-rect-rotate: rotate(45deg)
 $decoration-rect-color:#6C63FF
 
 .decoration
+   grid-area: decoration
    position: relative
 
    span:first-of-type
@@ -31,3 +32,10 @@ $decoration-rect-color:#6C63FF
          right: 4px
          top: 2px
 
+   @include useMinWidth(750px)
+      & 
+         display: none
+
+   @include useMinWidth(850px)
+      & 
+         display: block

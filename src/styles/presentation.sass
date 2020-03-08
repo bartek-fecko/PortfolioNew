@@ -4,13 +4,6 @@
     grid-template-rows: 3fr 2fr 1fr
     grid-template-areas: 'header decoration' 'desc desc' 'actions actions'
 
-    &__socials 
-        grid-area: socials
-        align-self: center
-        img 
-            width: 22px
-            height: 22px
-
     &__btn 
         border-radius: 4px
         width: 130px
@@ -30,9 +23,11 @@
             color: $primaryBlue
 
     &__author
+        display: none
         grid-area: author
         align-self: center
         text-align: right
+        color: $primaryBlue
 
     &__header
         grid-area: header
@@ -42,11 +37,38 @@
         color: #685E5E
                 
     &__big-img
+        grid-area: big-img
         display: none
 
     &__actions
         grid-area: actions
-        text-align: center
+        text-align: center  
+    
+    @include useMinWidth(750px)
+        grid-template-columns: 2fr 1fr 
+        grid-template-rows: 1fr 2fr 2fr
+        grid-template-areas: 'author .' 'header big-img' 'desc big-img' 'actions .'
 
-    &__decoration      
-        grid-area: decoration         
+        &__big-img 
+            display: inline
+            width: 100%
+
+        &__actions
+            text-align: left
+
+        &__author
+            display: block
+            text-align: left
+            margin-bottom: 0
+            align-self: end
+
+    @include useMinWidth(850px)
+        grid-template-columns: 100px 2fr .5fr 2fr
+        grid-template-rows: 1fr 2fr 1fr 1.5fr
+        grid-template-areas: 'decoration author . .' 'decoration header . big-img' 'decoration desc . big-img' 'decoration actions . .'
+
+        &__header
+            font-size: 2.5rem
+        
+        &__desc
+            margin-top: 0

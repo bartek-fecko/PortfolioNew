@@ -1,5 +1,9 @@
 .navigation
     width: 100%
+    position: sticky
+    top: 0
+    // border-bottom: 1px solid #eee
+    // background: rgba(255, 255, 255, .9)
 
     .container 
         display: flex
@@ -9,7 +13,40 @@
         list-style-type: none
         padding: 0
         display: none
+        align-self: center
+
+        a
+            text-decoration: none
+            margin-left: 2rem
+
+            &:hover
+                color: $primaryBlue
+                text-decoration: underline
+
+        li:first-of-type a 
+            font-weight: 500
+            color: $primaryBlue
 
     &__author
         align-self: center
         color: $primaryBlue
+
+    &__socials 
+        display: flex
+        align-items: center
+
+        img 
+            width: 22px
+            height: 22px
+            cursor: pointer
+            
+        a:first-of-type img
+            width: 28px
+            height: 28px
+            
+    @include useMinWidth(750px)
+        &__links
+            display: flex
+        
+        &__author
+            display: none

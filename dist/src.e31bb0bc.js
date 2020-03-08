@@ -190,7 +190,32 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scripts/carousel.ts":[function(require,module,exports) {
-console.log('yes');
+window.addEventListener('load', function () {
+  var carousel = function carousel() {
+    var carouselWrp = document.getElementsByClassName('carlousel')[0];
+    var isDown = false;
+    var mouseDownStartPoint = 0;
+    var scrollLeft = 0;
+    return function () {
+      carouselWrp.addEventListener('mousedown', function (e) {
+        isDown = true;
+        mouseDownStartPoint = e.pageX - carouselWrp.offsetLeft;
+        scrollLeft = carouselWrp.scrollLeft;
+      });
+      document.addEventListener('mouseup', function () {
+        isDown = false;
+      });
+      carouselWrp.addEventListener('mousemove', function (e) {
+        if (isDown) {
+          var delta = e.pageX - carouselWrp.offsetLeft - mouseDownStartPoint;
+          carouselWrp.scrollLeft = scrollLeft - delta;
+        }
+      });
+    };
+  };
+
+  carousel()();
+});
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -225,7 +250,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50669" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50260" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
