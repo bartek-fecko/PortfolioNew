@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scripts/carousel.ts":[function(require,module,exports) {
+},{"C:\\Users\\BartekPC\\system\\Desktop\\portfolioParcell\\src\\images\\technology_sprites.png":[["technology_sprites.7d079063.png","images/technology_sprites.png"],"images/technology_sprites.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scripts/carousel.ts":[function(require,module,exports) {
 window.addEventListener('load', function () {
   var carousel = function carousel() {
     var carouselWrp = document.getElementsByClassName('carlousel')[0];
@@ -215,13 +215,51 @@ window.addEventListener('load', function () {
 
   carousel()();
 });
+},{}],"scripts/modal.ts":[function(require,module,exports) {
+var __spreadArrays = this && this.__spreadArrays || function () {
+  for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+    s += arguments[i].length;
+  }
+
+  for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+    for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+      r[k] = a[j];
+    }
+  }
+
+  return r;
+};
+
+var modals = function modals() {
+  var modalsArray = __spreadArrays(document.getElementsByClassName('modal'));
+
+  var showModalActionsArray = __spreadArrays(document.querySelectorAll('.carlousel__box__overlay [data-for]'));
+
+  modalsArray.forEach(function (modalElement) {
+    modalElement.addEventListener('click', function (e) {
+      if (e.target === modalElement || e.target.classList.contains('modal__close-btn')) {
+        modalElement.style.display = 'none';
+      }
+    });
+  });
+  showModalActionsArray.forEach(function (showModalAction) {
+    showModalAction.addEventListener('click', function (e) {
+      var modalToDisplay = document.querySelector("[data-for=\"" + e.target.dataset.for + "\"]");
+      modalToDisplay.style.display = 'block';
+    });
+  });
+};
+
+modals();
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("./styles/index.sass");
 
 require("./scripts/carousel.ts");
-},{"./styles/index.sass":"styles/index.sass","./scripts/carousel.ts":"scripts/carousel.ts"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./scripts/modal.ts");
+},{"./styles/index.sass":"styles/index.sass","./scripts/carousel.ts":"scripts/carousel.ts","./scripts/modal.ts":"scripts/modal.ts"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -249,7 +287,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50007" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50202" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

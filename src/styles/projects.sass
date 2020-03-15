@@ -1,6 +1,6 @@
 .projects
    background: $backgroundGray
-   padding-top: 8rem
+   padding: 5rem 0
 
    &__desc
       text-align: center
@@ -21,3 +21,21 @@
 
    &__body
       margin-top: 44px + 28px
+      color: $sectionBodyColor
+
+   @include useMinWidth(750px)
+      &__desc
+         width: 60%
+         margin: 0 auto 2rem auto
+
+      &
+         padding: 7rem 0
+
+   @include useMinWidth(1020px)
+      &__desc
+         width: 50%
+
+   @include useMinWidth(1132px)
+      &__desc
+         width: 40%
+      

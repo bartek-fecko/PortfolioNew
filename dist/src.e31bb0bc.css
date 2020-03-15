@@ -36,7 +36,7 @@ body {
 }
 .navigation {
   width: 100%;
-  z-index: 100;
+  z-index: 101;
 }
 .navigation .container {
   display: flex;
@@ -82,7 +82,7 @@ body {
     position: sticky;
     top: 0;
     border-bottom: 1px solid #eee;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.97);
   }
   .navigation__links {
     display: flex;
@@ -224,7 +224,7 @@ body {
 .carlousel {
   width: 100%;
   background: transparent;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   display: flex;
   overflow: scroll;
   cursor: grab;
@@ -247,12 +247,12 @@ body {
   background: #3E35D1;
 }
 .carlousel__box {
-  min-width: 400px;
+  min-width: 270px;
   margin: 20px;
   position: relative;
-  height: 300px;
+  height: 230px;
 }
-.carlousel__box * {
+.carlousel__box__overlay * {
   color: white;
 }
 .carlousel__box img {
@@ -261,22 +261,33 @@ body {
   user-select: text;
 }
 .carlousel__box__overlay {
-  background: rgba(97, 74, 237, 0.65);
+  background: rgba(97, 74, 237, 0.82);
   position: absolute;
   width: 100%;
   bottom: 0;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem 0.5rem 1rem;
+  padding-top: 0;
+}
+.carlousel__box__overlay h {
+  margin-top: 0;
 }
 .carlousel__box__overlay p {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 14px;
+}
+@media only screen and (min-width: 750px) {
+  .carlousel {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .projects {
   background: #F8F8F8;
-  padding-top: 8rem;
+  padding: 5rem 0;
 }
 .projects__desc {
   text-align: center;
@@ -297,6 +308,229 @@ body {
 }
 .projects__body {
   margin-top: 72px;
+  color: #685E5E;
+}
+@media only screen and (min-width: 750px) {
+  .projects__desc {
+    width: 60%;
+    margin: 0 auto 2rem auto;
+  }
+  .projects {
+    padding: 7rem 0;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  .projects__desc {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1132px) {
+  .projects__desc {
+    width: 40%;
+  }
+}
+
+.technology {
+  background: white;
+  padding: 5rem 0;
+}
+.technology__desc {
+  text-align: center;
+}
+.technology__header {
+  display: inline;
+  position: relative;
+}
+.technology__header::after {
+  content: "";
+  background: #3E35D1;
+  height: 2px;
+  display: block;
+  position: absolute;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%, 28px);
+}
+.technology__body {
+  margin-top: 72px;
+  color: #685E5E;
+}
+@media only screen and (min-width: 750px) {
+  .technology__desc {
+    margin: 0 auto 2rem auto;
+  }
+  .technology {
+    padding: 7rem 0;
+  }
+}
+.technology .small-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 129.6px);
+  justify-content: center;
+  grid-gap: 1rem;
+  margin-top: 4rem;
+}
+.technology .small-boxes .small-box__block {
+  width: 129.6px;
+  height: 118.4px;
+  border-radius: 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.technology .small-boxes .small-box__block__img {
+  width: 100px;
+  height: 100px;
+  transform: translate(-2.9rem, -3.1rem) scale(0.3);
+}
+.technology .small-boxes .small-box__block .language {
+  width: 225px;
+  height: 225px;
+  background: url("/technology_sprites.7d079063.png") -10px -10px;
+}
+.technology .small-boxes .small-box__block .backend {
+  width: 224px;
+  height: 224px;
+  background: url("/technology_sprites.7d079063.png") -500px -230px;
+}
+.technology .small-boxes .small-box__block .react {
+  width: 225px;
+  height: 225px;
+  background: url("/technology_sprites.7d079063.png") -255px -10px;
+}
+.technology .small-boxes .small-box__block .styled {
+  width: 252px;
+  height: 200px;
+  background: url("/technology_sprites.7d079063.png") -500px -10px;
+  transform: translate(-3.7rem, -2.3rem) scale(0.25);
+}
+.technology .small-boxes .small-box__block .tools {
+  width: 225px;
+  height: 225px;
+  background: url("/technology_sprites.7d079063.png") -10px -255px;
+}
+.technology .small-boxes .small-box__block .html {
+  width: 225px;
+  height: 225px;
+  background: url("/technology_sprites.7d079063.png") -255px -255px;
+}
+.technology .small-boxes .small-box__desc {
+  color: rgba(0, 0, 0, 0.83);
+  font-size: 14px;
+}
+
+.modal {
+  display: none;
+  z-index: 100;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.51);
+}
+.modal .modal-container {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+.modal__nav {
+  background: #3E35D1;
+  border-radius: 12px 12px 0 0;
+}
+.modal__nav h2 {
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  padding: 1rem 0;
+  margin-left: 1rem;
+}
+.modal__body {
+  z-index: 100;
+  width: 90%;
+  margin: 1rem auto;
+  background: #FFFFFF;
+  border-radius: 12px;
+}
+.modal__content {
+  z-index: 100;
+}
+.modal__content > div {
+  display: block;
+}
+.modal__content img {
+  width: 60%;
+  min-height: 90%;
+  max-height: 400px;
+  z-index: 101;
+  grid-area: img;
+  margin: 0 auto;
+  display: block;
+}
+.modal__content__info {
+  display: flex;
+  flex-direction: column;
+  grid-area: body;
+  text-align: center;
+}
+.modal__content__info p:nth-of-type(2) {
+  font-weight: 500;
+}
+.modal__content__info p:nth-of-type(2) i {
+  color: #696969;
+  font-weight: normal;
+  font-style: normal;
+}
+.modal__content__info__btn-wrp {
+  padding: 1rem 0 2rem 0;
+  justify-self: flex-end;
+}
+.modal__content__info button {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #3E35D1;
+  color: #3E35D1;
+  text-transform: uppercase;
+  background: white;
+  padding: 0.5rem 2rem;
+  min-width: 8rem;
+  margin-top: 0.5rem;
+}
+.modal__content__info .modal__btn--primary {
+  background: #3E35D1;
+  color: white;
+}
+@media only screen and (min-width: 750px) {
+  .modal {
+    top: 75px;
+    height: calc(100% - 75px);
+  }
+  .modal__body {
+    width: 70%;
+  }
+  .modal__nav h2 {
+    margin-left: 3rem;
+  }
+  .modal__content .modal-container {
+    display: grid;
+    grid-template-rows: 2fr 0.5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "img body" "img body";
+  }
+  .modal__content__info {
+    text-align: left;
+  }
+  .modal__content__info__btn-wrp {
+    margin-top: 4rem;
+  }
+  .modal img {
+    display: inline;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 750px) {
+  .modal img {
+    width: 40%;
+    max-height: 200px;
+  }
 }
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

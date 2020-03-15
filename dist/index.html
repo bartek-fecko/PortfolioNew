@@ -12,8 +12,8 @@
    <nav class="navigation">
       <div class="container">
          <h4 class="navigation__socials">
-            <a href="#"><img src="/github.0512e05a.png" alt="Github projects link"></a>
-            <a href="#"> <img src="/linked.3cfb625f.png" alt="Linkedin link"></a>
+            <a href="https://github.com/bartek-fecko" target="_blank"><img src="/github.0512e05a.png" alt="Github projects link"></a>
+            <a href="https://www.linkedin.com/in/bart%C5%82omiej-fecko/" target="_blank"> <img src="/linked.3cfb625f.png" alt="Linkedin link"></a>
          </h4>
 
          <ul class="navigation__links">
@@ -53,38 +53,120 @@
       <div class="container">
          <div class="projects__desc">
             <h1 class="projects__header section-header">Some of my Projects</h1>
-            <p class="projects__body">fullstack app, landidng pages, games, differenet types of application.</p>
-
+            <p class="projects__body">fullstack app, landidng pages, games, diffrent types of application</p>
          </div>
-         <!-- <div class="gallery__box__overlay"></div> -->
+
+         <div class="modal" data-for="2dPlatformer-modal">
+            <div class="modal__body">
+               <nav class="modal__nav">
+                  <div class="modal-container">
+                     <h2>2d Platformer</h2>
+                     <span class="modal__close-btn"></span>
+                  </div>
+               </nav>
+               <div class="modal__content">
+                  <div class="modal-container">
+                     <img src="/platformer.9686939a.png" alt="2d platformer game project">
+                     <section class="modal__content__info">
+                        <h2>2d Palatformer</h2>
+                        <p>2d platformer game. Still many things to do...</p>
+                        <p>Technology: <i>React, Node.js, Typescript</i></p>
+                        <div class="modal__content__info__btn-wrp">
+                           <button>github</button>
+                           <button class="modal__btn--primary">preview</button>
+                        </div>
+                     </section>
+                  </div>
+               </div>
+            </div>
+         </div>
 
          <div class="carlousel">
             <div class="carlousel__box">
-               <img src="/itboard.2e2019e2.png" draggable="false" alt="">
+               <img src="/fullstack.62ed43f2.png" draggable="false" alt="fullstack application project">
                <div class="carlousel__box__overlay">
-                  <h3><a href="/#">2d platformer</a> </h3>
-                  <p>It is a long established fact that a reader will be distracted by the readable...</p>
+                  <h3 data-for="fullstack-modal">FullStack App</h3>
+                  <p>Aplication that allows people to create update profiles and posts. The application works with
+                     mongo databse and jwt authentication.
+                  </p>
                </div>
             </div>
+
             <div class="carlousel__box">
-               <img src="/fullstack.62ed43f2.png" draggable="false" alt="">
+               <img src="/platformer.9686939a.png" draggable="false" alt="2d platformer game project">
                <div class="carlousel__box__overlay">
-                  <h3>2d platformer</h3>
-                  <p>It is a long established fact that a reader will be distracted by the readable...</p>
+                  <h3 data-for="2dPlatformer-modal">2d platformer</h3>
+                  <p>2d platformer game. Still many things to do...</p>
                </div>
             </div>
+
             <div class="carlousel__box">
-               <img src="/battleship.d8c0ad4e.png" draggable="false" alt="">
+               <img src="/itboard.2e2019e2.png" draggable="false" alt="it board project">
                <div class="carlousel__box__overlay">
-                  <h3>2d platformer</h3>
-                  <p>It is a long established fact that a reader will be distracted by the readable...</p>
+                  <h3>It Board</h3>
+                  <p>It board application allows you to find job. App supports query strings e.g if you want to save
+                     your search. </p>
                </div>
             </div>
+
             <div class="carlousel__box">
-               <img src="/platformer.9686939a.png" draggable="false" alt="">
+               <img src="/battleship.d8c0ad4e.png" draggable="false" alt="battelship online game project">
                <div class="carlousel__box__overlay">
-                  <h3>2d platformer</h3>
-                  <p>It is a long established fact that a reader will be distracted by the readable...</p>
+                  <h3>Battleship online</h3>
+                  <p>Multplayer game allows people to talk with each other and play classic board game online...</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="technology">
+      <div class="container">
+         <div class="technology__desc">
+            <h1 class="technology__header section-header">Technology</h1>
+            <p class="technology__body">I learned and I'm using</p>
+
+            <div class="small-boxes">
+               <div class="small-box">
+                  <div class="small-box__block">
+                     <div class="small-box__block__img language"></div>
+                  </div>
+                  <p class="small-box__desc">js/typescript</p>
+               </div>
+
+               <div class="small-box">
+                  <div class="small-box__block">
+                     <div class="small-box__block__img backend"></div>
+                  </div>
+                  <p class="small-box__desc">node.js/express</p>
+               </div>
+
+               <div class="small-box">
+                  <div class="small-box__block">
+                     <div class="small-box__block__img react"></div>
+                  </div>
+                  <p class="small-box__desc">react/redux/saga</p>
+               </div>
+
+               <div class="small-box">
+                  <div class="small-box__block">
+                     <div class="small-box__block__img styled"></div>
+                  </div>
+                  <p class="small-box__desc">materialui/styled-components</p>
+               </div>
+
+               <div class="small-box">
+                  <div class="small-box__block">
+                     <div class="small-box__block__img tools"></div>
+                  </div>
+                  <p class="small-box__desc">webpack/npm/git</p>
+               </div>
+
+               <div class="small-box">
+                  <div class="small-box__block">
+                     <div class="small-box__block__img html"></div>
+                  </div>
+                  <p class="small-box__desc">html/css/sass</p>
                </div>
             </div>
          </div>

@@ -1,0 +1,70 @@
+.technology
+   background: white
+   padding: 5rem 0
+
+   &__desc
+      text-align: center
+
+   &__header
+      display: inline
+      position: relative
+
+      &::after
+         content: ''
+         background: $primaryBlue
+         height: 2px
+         display: block
+         position: absolute
+         width: 70%
+         left: 50%
+         transform: translate(-50%, 28px)
+
+   &__body
+      margin-top: 44px + 28px
+      color: $sectionBodyColor
+
+   @include useMinWidth(750px)
+      &__desc
+         // width: 60%
+         margin: 0 auto 2rem auto
+
+      &
+         padding: 7rem 0
+
+   // @include useMinWidth(1020px)
+   //    &__desc
+   //       width: 50%
+
+   // @include useMinWidth(1132px)
+   //    &__desc
+   //       width: 40%
+      
+   $boxWidth: 162px * .8
+   $boxHeight: 148px * .8
+    
+   .small-boxes
+      display: grid
+      grid-template-columns: repeat(auto-fit, $boxWidth)
+      justify-content: center
+      grid-gap: 1rem
+      margin-top: 4rem
+
+      .small-box
+
+         &__block
+            width: $boxWidth
+            height: $boxHeight
+            border-radius: 25px
+            background: #FFFFFF
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25)
+
+            &__img
+               width: 100px
+               height: 100px
+               transform: translate(-2.9rem, -3.1rem) scale(.3)
+
+            @import ./sprites
+      
+         &__desc
+            color: rgba(0, 0, 0, 0.83)
+            font-size: 14px

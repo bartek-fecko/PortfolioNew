@@ -4,8 +4,13 @@
 @mixin useMinWidth($minWidth)
    @media only screen and (min-width: $minWidth)
       @content
-      
+
+@mixin useMinMaxWidth($minWidth, $maxWidth)
+   @media only screen and (min-width: $minWidth) and (max-width: $maxWidth)
+      @content      
+
 $primaryBlue: #3E35D1
 $backgroundGray: #F8F8F8
+$sectionBodyColor: #685E5E
 
 $sectionHeadersFontSize: 2rem
