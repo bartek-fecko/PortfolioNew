@@ -235,17 +235,25 @@ var modals = function modals() {
 
   var showModalActionsArray = __spreadArrays(document.querySelectorAll('.carlousel__box__overlay [data-for]'));
 
+  var hideModal = function hideModal(target, modalElement) {
+    if (target === modalElement || target.classList.contains('modal__close-btn')) {
+      modalElement.style.display = 'none';
+    }
+  };
+
+  var showModal = function showModal(target) {
+    var modalToDisplay = document.querySelector("[data-for=\"" + target.dataset.for + "\"]");
+    modalToDisplay.style.display = 'block';
+  };
+
   modalsArray.forEach(function (modalElement) {
     modalElement.addEventListener('click', function (e) {
-      if (e.target === modalElement || e.target.classList.contains('modal__close-btn')) {
-        modalElement.style.display = 'none';
-      }
+      return hideModal(e.target, modalElement);
     });
   });
   showModalActionsArray.forEach(function (showModalAction) {
     showModalAction.addEventListener('click', function (e) {
-      var modalToDisplay = document.querySelector("[data-for=\"" + e.target.dataset.for + "\"]");
-      modalToDisplay.style.display = 'block';
+      return showModal(e.target);
     });
   });
 };
